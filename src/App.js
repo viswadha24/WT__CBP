@@ -3,6 +3,9 @@ import { Route,Routes,Link } from 'react-router-dom';
 import Home from './Components/home/Home'
 import Signup from './Components/Signup';
 import Login from './Components/Login';
+import MyCart from './Components/MyCart';
+import CheckOut from './Components/check-out/checkOut';
+import MyArts from './Components/my-arts/MyArts';
 
 function App() {
   
@@ -34,8 +37,13 @@ function App() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="login">
-                    Login
+                  <Link className="nav-link" to="my-arts">
+                    My Arts
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="my-cart">
+                    My Cart
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -43,6 +51,18 @@ function App() {
                     SignUp
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="login">
+                    Login
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="signup">
+                    SignUp
+                  </Link>
+                </li>
+                
               </ul>
             </div>
           </div>
@@ -51,6 +71,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/my-cart" element={<MyCart/>} />
+          <Route path="/check-out" element={<CheckOut />} />
+          <Route path="/my-arts" element={<MyArts />} />
           {/*} <Route path="/contactus" element={<Contactus />} />
         <Route path="/userdashboard" element={<Userdashboard />}>
           <Route path="profile" element={<Userprofile />} />
