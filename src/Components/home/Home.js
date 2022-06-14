@@ -11,8 +11,9 @@ function Home() {
         <Carousel.Item>
           <img
             className="d-block"
-            src={art1}
+            src="https://dreamsong.art/wp-content/uploads/afeatherplucked_install_1_web.jpg"
             alt="First slide"
+            style={{width:'1600px',height:'400px'}}
           />
           <Carousel.Caption className='text-dark'>
             <h3>First slide label</h3>
@@ -23,7 +24,7 @@ function Home() {
         <Carousel.Item>
           <img
             className="d-block"
-            src={art1}
+            src="https://newcriterion.com/storage/app/resized/773/0c7/3bb/2022joanmitchell194o3-1_resized_7730c73bb41f416a8a54917f228119b85c64e03c.jpg"
             alt="Second slide"
           />
           <Carousel.Caption className='text-dark'>
@@ -35,7 +36,7 @@ function Home() {
         <Carousel.Item>
           <img
             className="d-block"
-            src={art1}
+            src="https://artbusinessnews.com/wpdev/wp-content/uploads/2020/05/How-to-Talk-About-Your-Art-1170x780.jpg"
             alt="Third slide"
           />
           <Carousel.Caption className='text-dark'>
@@ -48,6 +49,7 @@ function Home() {
       </Carousel>
 
       <Cards className='mt-5' />
+      
     </div>
   );
 }

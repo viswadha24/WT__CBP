@@ -24,14 +24,14 @@ function Cards() {
       <Row xs={1} md={3} className="g-4">
         {Array.from({ length: 6 }).map((_, idx) => (
           <Col>
-            <Card>
-              <Card.Img variant="top" src={art1} />
+            <Card style={{width:'320px',alignContent:'center',padding:'10px'}}>
+              <Card.Img variant="top" src="https://lh6.ggpht.com/HlgucZ0ylJAfZgusynnUwxNIgIp5htNhShF559x3dRXiuy_UdP3UQVLYW6c=s1200" 
+              style={{width:'300px'}}
+              />
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
                   This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
                 </Card.Text>
                 <Button className="float-right" variant="primary" onClick={handleShow}>
                   View Details

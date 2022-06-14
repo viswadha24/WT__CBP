@@ -61,7 +61,7 @@ function AddArts() {
                 <tbody>
                     {
                         users.map((userObj) => <tr key={userObj.id}>
-                             <td><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/G%C3%A9rald_KIERZEK_%28Cr%C3%A9dit_Ibo%29.jpg" width="100px" alt="" /></td>
+                             <td><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/G%C3%A9rald_KIERZEK_%28Cr%C3%A9dit_Ibo%29.jpg" style={{width:'100px'}} alt="" /></td>
                             <td>{userObj.id*3}</td>
                             <td>{userObj.name}</td>
                             <td>{userObj.username}</td>
