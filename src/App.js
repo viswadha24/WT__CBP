@@ -15,7 +15,7 @@ function App() {
         {/* <h1>Hi Hello</h1> */}
         <nav className="navbar navbar-expand-lg bg-light">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="/" style={{color: "red",fontSize:40,fontWeight:600}}>
               Art Gallery
             </a>
             <button
@@ -31,37 +31,33 @@ function App() {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                <li className="nav-item" >
+                  <Link className="nav-link active" aria-current="page" to="/" style={{color: "red",fontSize:25,fontWeight:400}}>
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="my-arts">
+                  <Link className="nav-link" to="my-arts" style={{color: "red",fontSize:25,fontWeight:400}}>
                     My Arts
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="my-cart">
+                  <Link className="nav-link" to="my-cart" style={{color: "red",fontSize:25,fontWeight:400}}>
                     My Cart
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="signup">
+                  <Link className="nav-link" to="signup" style={{color: "red",fontSize:25,fontWeight:400}}>
                     SignUp
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="login">
+                  <Link className="nav-link" to="login" style={{color: "red",fontSize:25,fontWeight:400}}>
                     Login
                   </Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link className="nav-link" to="signup">
-                    SignUp
-                  </Link>
-                </li>
+               
                 
               </ul>
             </div>

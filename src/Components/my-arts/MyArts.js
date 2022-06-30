@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useForm } from 'react-hook-form'
-import { MdLogin } from "react-icons/md"
+import { MdLogin } from "react-icons/md";
+import Cards from '../card/Cards';
 
 
 function MyArts(props) {
@@ -105,7 +106,7 @@ function MyArts(props) {
         </Modal.Footer>  */ } 
       </Modal>
     </>
-
+    <Cards className='mt-5' />
         </div>
     );
 }
