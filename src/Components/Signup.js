@@ -1,6 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { MdLogin } from "react-icons/md"
+import { MdLogin } from "react-icons/md";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const {
@@ -8,14 +10,39 @@ function Signup() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+
 
   const onFormSubmit=(userObj)=>{
-    console.log(userObj)
-    alert("Signup Successfull")
+    console.log(userObj);   
+
+    axios
+    .post("http://localhost:3003/user-api/create-user",userObj)
+    .then((response) => {
+      //alert(response.data.message+"🎇🎃🎃🎃");
+      //if user created
+      if (response.data.message === "Username already exists") {
+        //navigate to login
+        
+         alert(response.data.message+"🎃🎃🎃");  
+      }
+      else
+      {
+        alert(response.data.message+"🎇🎇🎇🎇🎇");
+        navigate("/login");
+      }
+    })
+    .catch((error) => {
+      console.log(error,"*******+++++++++++++");
+      alert("Something went wrong in creating user");
+    });
+
+    //alert("Signup Successfull");
   }
 
   return (
-    <form className='w-50 mx-auto' onSubmit={handleSubmit(onFormSubmit)}>
+    <form className='w-50 mx-auto p-3 mt-3' onSubmit={handleSubmit(onFormSubmit)} style={{backgroundColor:'#ECEFAD'}}>
+       <h3 className='text-center'>SIGNUP FORM</h3>
       <div className='mb-3 mt-2'>
         <label htmlFor='username'>Username</label>
         <input type="text" id='username' className='form-control' placeholder='Enter username' {...register('username', { required: true, minLength: 4})} />
@@ -31,7 +58,7 @@ function Signup() {
 
       <div className='mb-3'>
         <label htmlFor='pass'>Password</label>
-        <input type="password" name='' id='pass' className='form-control' placeholder='Enter password' {...register('pass', { required: true })} />
+        <input type="password" name='' id='pass' className='form-control' placeholder='Enter password' {...register('password', { required: true })} />
         {errors.pass?.type === 'required' && <p className='text-danger'> *Password is required </p>}
       </div>
 

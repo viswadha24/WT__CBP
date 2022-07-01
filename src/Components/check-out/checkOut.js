@@ -1,7 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom' ;
 
 function CheckOut() {
+  const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -10,12 +13,37 @@ function CheckOut() {
     
       const onFormSubmit=(userObj)=>{
         console.log(userObj)
+        const name=localStorage.getItem("username");
+
+        axios
+        .post(`http://localhost:3003/user-api/add-to-checkout/${name}`,userObj)
+        .then((response) => {
+         // alert(response.data.message+"🎇🎃🎃🎃");
+          //if user created
+          if (response.data.message === "Username already exists") {
+            //navigate to login
+            
+             alert(response.data.message+"🎃🎃🎃");  
+          }
+          else
+          {
+            alert(response.data.message+"🎇🎇🎇🎇🎇");
+            navigate("/");
+          }
+        })
+        .catch((error) => {
+          console.log(error,"*******+++++++++++++");
+          alert("Something went wrong in creating user");
+        });
+ 
+
       }
     return (
-        <div>
-            <h1>Check Out</h1>
-            <form className='w-50 mx-auto p-5' onSubmit={handleSubmit(onFormSubmit)}>
-      <div className='mb-3 mt-5'>
+     <div >
+            
+    <form className='w-50 mx-auto p-5'style={{backgroundColor:'#CBACE1'}} onSubmit={handleSubmit(onFormSubmit)} >
+    <h1 className='text-center my-3'>Check Out</h1>
+      <div className='mb-3 mt-3'>
         <label htmlFor='name'>Name</label>
         <input type="text" id='name' className='form-control' placeholder='Enter name' {...register('name', { required: true, minLength: 4 })} />
         {errors.name?.type === 'required' && <p className='text-danger'> *name is required </p>}

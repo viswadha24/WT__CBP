@@ -1,0 +1,81 @@
+POST http://localhost:3003/user-api/create-user
+Content-Type: application/json
+
+{
+    "username":"viswadha1",
+    "password":"visu"
+}
+
+###
+GET http://localhost:3003/localhost:3000/getusers
+
+###
+
+POST http://localhost:3003/user-api/login
+Content-Type: application/json
+
+{
+    "username":"viswadha",
+    "password":"visu"
+}
+
+
+
+###
+POST http://localhost:3003/user-api/add-arts
+Content-Type: application/json
+
+{
+      "art-name":"abcd",
+      "art-price":"abcdefghijklmn",
+      "type":"painting"
+}
+
+###
+GET http://localhost:3003/user-api/get-all-arts
+
+
+
+
+
+###
+POST http://localhost:3003/user-api/add-to-arts/viswadha6
+Content-Type: application/json
+
+{
+      "art-name":"abcd",
+      "art-price":"abcdefghijklmn",
+      "type":"painting"
+}
+
+
+
+###
+GET http://localhost:3003/user-api/get-art-products/viswadha6
+
+
+
+
+
+
+
+
+
+
+
+###
+POST http://localhost:3003/user-api/add-to-cart/viswadha6
+Content-Type: application/json
+
+{
+      "art-name":"abcd",
+      "art-price":"abcdefghijklmn",
+      "type":"painting",
+      "buy":"yes"
+}
+
+
+
+
+###
+GET http://localhost:3003/user-api/get-cart-products/viswadha
